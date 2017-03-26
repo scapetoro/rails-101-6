@@ -1,0 +1,17 @@
+<div class="col-md-4 col-md-offset-4">
+    <h2>编辑电影讨论版</h2>
+
+    <hr>
+    <%= form_for @group do |f| %>
+
+    影片名称
+    <%= f.text_field :movie %>
+    <br>
+    影片简介
+    <br>
+    <%= f.text_area :description %>
+    <br>
+
+    <%= f.submit "Submit", :disable_with => 'Submiting...' %>
+    <% end %>
+</div>
