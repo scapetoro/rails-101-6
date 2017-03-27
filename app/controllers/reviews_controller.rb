@@ -6,6 +6,11 @@ class ReviewsController < ApplicationController
     @review = Review.new
   end
 
+  def edit
+    @group = Group.find(params[:group_id])
+    @review = Review.find(params[:id])
+  end
+
   def create
     @group = Group.find(params[:group_id])
     @review = Review.new(review_params)
@@ -17,6 +22,20 @@ class ReviewsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def update
+    @group = Group.find(params[:group_id])
+    @review = Review.find(params[:id])
+    @review.update(review_params)
+    redirect_to account_reviews_path, notice: "编辑成功！"
+  end
+
+  def destroy
+    @group = Group.find(params[:group_id])
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to account_reviews_path, warning: "评论已删除！"
   end
 
   private

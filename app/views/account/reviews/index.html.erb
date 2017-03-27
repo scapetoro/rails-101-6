@@ -1,0 +1,27 @@
+<div class="col-md-12">
+
+  <h2 class="text-center"> 我发表过的评论 </h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th> Review </th>
+        <th> Movie Name </th>
+        <th> Last Update </th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @reviews.each do |f| %>
+        <tr>
+          <td> <%= f.content %> </td>
+          <td> <%= f.group.movie %> </td>
+          <td> <%= f.updated_at %> </td>
+          <td> <%= link_to('Edit', edit_group_review_path(f.group, f), class: "btn btn-default btn-xs") %></td>
+          <td> <%= link_to('Delete', group_review_path(f.group, f), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default btn-xs") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

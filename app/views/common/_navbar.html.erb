@@ -2,7 +2,7 @@
   <div class="container-fluid">
 
       <div class="navbar-header">
-          <a class="navbar-brand" href="/">Rails 101</a>
+          <a class="navbar-brand" href="/">Rails 101 我爱👀电影</a>
       </div>
 
 
@@ -19,6 +19,7 @@
                  </a>
                  <ul class="dropdown-menu">
                      <li> <%= link_to("加入的群", account_groups_path) %></li>
+                     <li> <%= link_to("发表的评论", account_reviews_path) %></li>
                      <li class="divider"> </li>
                      <li> <%= link_to("退出", destroy_user_session_path, method: :delete) %> </li>
                  </ul>
