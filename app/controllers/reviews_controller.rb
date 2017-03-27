@@ -35,7 +35,7 @@ class ReviewsController < ApplicationController
     @group = Group.find(params[:group_id])
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to account_reviews_path, warning: "评论已删除！"
+    redirect_to account_reviews_path, alert: "评论已删除！"
   end
 
   private
