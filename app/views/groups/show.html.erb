@@ -4,8 +4,12 @@
     <span class="pull-right">
       <% if current_user && current_user.is_member_of?(@group) %>
         <label class="label label-success">电影群友</label>
+        <%= link_to("退出电影群", quit_group_path(@group), method: :post, class: "btn btn-default") %>
       <% else %>
         <label class="label label-warning">不是电影群友</label>
+        <% if user_signed_in? %>
+        <%= link_to("加入电影群", join_group_path(@group), method: :post, class: "btn btn-default") %>
+        <% end %>
       <% end %>
     </span>
 
