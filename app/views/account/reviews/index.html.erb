@@ -16,7 +16,7 @@
     <tbody>
       <% @reviews.each do |f| %>
         <tr>
-          <td> <%= f.content %> </td>
+          <td> <%= simple_format(f.content) %> </td>
           <td> <%= f.group.movie %> </td>
           <td> <%= f.group.user.email %> </td>
           <td> <%= f.updated_at %> </td>
