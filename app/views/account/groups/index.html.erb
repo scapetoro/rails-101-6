@@ -8,6 +8,7 @@
         <th> # </th>
         <th> Movie </th>
         <th> Description </th>
+        <th> Group Creator </th>
         <th> Review Count </th>
         <th> Last Update </th>
       </tr>
@@ -19,6 +20,7 @@
           <td> # </td>
           <td> <%= link_to(group.movie, group_path(group)) %> </td>
           <td> <%= group.description %> </td>
+          <td> <%= group.user.email %> </td>
           <td> <%= group.reviews.count %> </td>
           <td> <%= group.updated_at %> </td>
         </tr>

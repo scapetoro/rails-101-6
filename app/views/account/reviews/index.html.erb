@@ -7,6 +7,7 @@
       <tr>
         <th> Review </th>
         <th> Movie Name </th>
+        <th> Group Creator </th>
         <th> Last Update </th>
         <th colspan="2"></th>
       </tr>
@@ -17,6 +18,7 @@
         <tr>
           <td> <%= f.content %> </td>
           <td> <%= f.group.movie %> </td>
+          <td> <%= f.group.user.email %> </td>
           <td> <%= f.updated_at %> </td>
           <td> <%= link_to('Edit', edit_group_review_path(f.group, f), class: "btn btn-default btn-xs") %></td>
           <td> <%= link_to('Delete', group_review_path(f.group, f), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default btn-xs") %></td>

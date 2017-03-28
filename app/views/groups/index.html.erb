@@ -2,14 +2,18 @@
   <div class="group">
     <%= link_to("New movie", new_group_path, class: "btn btn-primary pull-right") %>
   </div>
+
+  <h3 class= "text-center"> 我爱👀电影 </h3>
+
   <table class="table table-hover">
     <thead>
       <tr>
-        <td>#</td>
-        <td>Movie</td>
-        <td>Description</td>
-        <td>Creator </td>
-        <td>Created at</td>
+        <th>#</th>
+        <th>Movie</th>
+        <th>Description</th>
+        <th>Creator </th>
+        <th>Review Count</th>
+        <th>Created at</th>
       </tr>
     </thead>
     <tbody>
@@ -19,6 +23,7 @@
           <td><%= link_to(group.movie, group_path(group)) %></td>
           <td><%= group.description %></td>
           <td><%= group.user.email %></td>
+          <td><%= group.reviews.count %></td>
           <td><%= group.created_at %></td>
           <td>
             <% if current_user && current_user == group.user %>
